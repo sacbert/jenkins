@@ -19,6 +19,11 @@ sudo apt install -y jenkins
 
 systemctl start jenkins
 
+usermod -aG docker vagrant
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod 755 /usr/local/bin/docker-compose
+
 # Apache install
 #apt-get install -y apache2
 #if ! [ -L /var/www ]; then
